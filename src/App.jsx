@@ -1,122 +1,66 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0)
+// Importación de las 4 vistas modularizadas
+import ProductosView from './components/productos/ProductosView';
+import PersonajesView from './components/personajes/PersonajesView';
+import CategoriasView from './components/categorias/CategoriasView';
+import ComprasView from './components/compras/ComprasView';
+
+import './styles.css';
+
+export default function App() {
+  // Estado para la pestaña activa ('productos', 'personajes', 'categorias', 'compras')
+  const [activeTab, setActiveTab] = useState('productos');
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="app-container">
+      <header>
+        <h1>🎮 Gestor MundoJuegos</h1>
+        <p className="subtitle">Tienda Gamer & Sistema de Administración (Opción D)</p>
+        
+        {/* Barra de navegación para alternar entre los 4 CRUDs */}
+        <nav className="navbar">
+          <button 
+            type="button"
+            className={`btn-nav ${activeTab === 'productos' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('productos')}
+          >
+            📦 Productos
+          </button>
+          
+          <button 
+            type="button"
+            className={`btn-nav ${activeTab === 'personajes' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('personajes')}
+          >
+            🎭 Personajes
+          </button>
+          
+          <button 
+            type="button"
+            className={`btn-nav ${activeTab === 'categorias' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('categorias')}
+          >
+            🏷️ Categorías
+          </button>
+          
+          <button 
+            type="button"
+            className={`btn-nav ${activeTab === 'compras' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('compras')}
+          >
+            🛒 Compras
+          </button>
+        </nav>
+      </header>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      {/* Renderizado condicional según la pestaña seleccionada */}
+      <main className="main-content">
+        {activeTab === 'productos' && <ProductosView />}
+        {activeTab === 'personajes' && <PersonajesView />}
+        {activeTab === 'categorias' && <CategoriasView />}
+        {activeTab === 'compras' && <ComprasView />}
+      </main>
+    </div>
+  );
 }
-
-export default App
