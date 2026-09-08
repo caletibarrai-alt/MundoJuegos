@@ -24,7 +24,7 @@ export default function ProductosView() {
 
   return (
     <div>
-      <h2>📦 CRUD Productos Gamers</h2>
+      <h2>📦 Productos Gamers</h2>
       <FormProducto onAdd={handleAdd} />
       <TablaProductos productos={productos} onDelete={handleDelete} />
     </div>

@@ -24,7 +24,7 @@ export default function PersonajesView() {
 
   return (
     <div>
-      <h2>🎭 CRUD Personajes Gamers</h2>
+      <h2>🎭 Personajes Gamers</h2>
       <FormPersonaje onAdd={handleAdd} />
       <TablaPersonajes personajes={personajes} onDelete={handleDelete} />
     </div>

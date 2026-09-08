@@ -149,3 +149,12 @@ button.btn-del:hover {
   background: #b00020;
   color: #fff;
 }
+
+/* Corrección de color para los títulos sobre fondo oscuro */
+h2 {
+  color: #ffffff !important; /* El !important fuerza el color blanco puro */
+  text-align: left;
+  font-size: 1.6rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
