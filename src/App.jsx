@@ -16,7 +16,7 @@ export default function App() {
     <div className="app-container">
       <header>
         <h1>🎮 Gestor MundoJuegos</h1>
-        <p className="subtitle">Tienda Gamer & Sistema de Administración (Opción D)</p>
+        <p className="subtitle">Tienda Gamer & Sistema de Administración </p>
         
         {/* Barra de navegación para alternar entre los 4 CRUDs */}
         <nav className="navbar">

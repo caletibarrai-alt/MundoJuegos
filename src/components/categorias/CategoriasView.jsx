@@ -24,7 +24,7 @@ export default function CategoriasView() {
 
   return (
     <div>
-      <h2>🏷️ CRUD Categorías</h2>
+      <h2>🏷️ Categorías</h2>
       <FormCategoria onAdd={handleAdd} />
       <TablaCategorias categorias={categorias} onDelete={handleDelete} />
     </div>
