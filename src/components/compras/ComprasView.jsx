@@ -24,7 +24,7 @@ export default function ComprasView() {
 
   return (
     <div>
-      <h2>🛒 CRUD Compras Gamer</h2>
+      <h2>🛒 Compras Gamer</h2>
       <FormCompra onAdd={handleAdd} />
       <TablaCompras compras={compras} onDelete={handleDelete} />
     </div>

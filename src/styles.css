@@ -1,0 +1,160 @@
+/* Estilos globales y reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  padding: 20px;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  border-bottom: 2px solid #333;
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+h1 {
+  color: #bb86fc;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #a0a0a0;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Navegación */
+.navbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-nav {
+  padding: 10px 18px;
+  background: #1e1e1e;
+  color: #a0a0a0;
+  border: 1px solid #333;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-nav:hover {
+  background: #2c2c2c;
+  color: #fff;
+}
+
+.btn-nav.active {
+  background: #bb86fc;
+  color: #000;
+  border-color: #bb86fc;
+}
+
+/* Formulario */
+.form-card {
+  background: #1e1e1e;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+input {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #3c3c3c;
+  background: #2a2a2a;
+  color: #fff;
+  flex: 1;
+  min-width: 150px;
+}
+
+input:focus {
+  outline: 1px solid #bb86fc;
+}
+
+button.btn-add {
+  background: #03dac6;
+  color: #000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+button.btn-add:hover {
+  opacity: 0.9;
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #1e1e1e;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #2a2a2a;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+th {
+  background: #2a2a2a;
+  color: #bb86fc;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+tr {
+  border-bottom: 1px solid #2a2a2a;
+}
+
+tr:last-child {
+  border-bottom: none;
+}
+
+button.btn-del {
+  background: #cf6679;
+  color: #000;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.btn-del:hover {
+  background: #b00020;
+  color: #fff;
+}
+
+/* Corrección de color para los títulos sobre fondo oscuro */
+h2 {
+  color: #ffffff !important; /* El !important fuerza el color blanco puro */
+  text-align: left;
+  font-size: 1.6rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
